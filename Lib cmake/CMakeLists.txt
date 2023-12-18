@@ -8,8 +8,8 @@ file(GLOB_RECURSE ${LIB_NAME}_SRCS
     src/*.cpp
 )
 file(GLOB_RECURSE ${LIB_NAME}_HEADER
-    includes/*.h
-    includes/*.hpp
+    include/*.h
+    include/*.hpp
 )
 add_library(${LIB_NAME} STATIC
     ${${LIB_NAME}_SRCS}
@@ -22,4 +22,4 @@ target_link_libraries(${LIB_NAME} PRIVATE
     SDL3::SDL3
     GLAD
 )
-target_include_directories(${LIB_NAME} PUBLIC includes)
+target_include_directories(${LIB_NAME} PUBLIC include)

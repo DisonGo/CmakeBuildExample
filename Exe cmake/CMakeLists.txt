@@ -9,8 +9,8 @@ file(GLOB_RECURSE ${EXE_NAME}_SRCS
     src/*.cpp
 )
 file(GLOB_RECURSE ${EXE_NAME}_HEADER
-    includes/*.h
-    includes/*.hpp
+    include/*.h
+    include/*.hpp
 )
 add_executable(${EXE_NAME}
     MACOSX_BUNDLE
@@ -18,14 +18,14 @@ add_executable(${EXE_NAME}
     ${${EXE_NAME}_HEADER}
 )
 target_link_libraries(${EXE_NAME} PRIVATE
-godison
-${P_NAME}
-g_gui
-SDL3::SDL3
-imgui   
-GLAD
-SOIL
-TinyFileDialogs
+    godison
+    ${P_NAME}
+    g_gui
+    SDL3::SDL3
+    imgui   
+    GLAD
+    SOIL
+    TinyFileDialogs
 )
 
 foreach(RESOURCE_FILE ${RESOURCE_FILES})
@@ -37,7 +37,7 @@ foreach(RESOURCE_FILE ${RESOURCE_FILES})
     )
 endforeach()
 target_include_directories(${EXE_NAME} PUBLIC 
-    ./includes
+    ./include
 )
 string(TOUPPER ${EXE_NAME} GUI_ID)
 set_target_properties(${EXE_NAME} PROPERTIES
